@@ -1,11 +1,11 @@
-
-<h1>Add games</h1>
-<%= form_for :game, url: games_path do |f| %>
+<h1>Edit games list</h1>
+<%= form_for :game, url: game_path(@game), method: :patch do |f| %>
   <% if @game.errors.any? %>
     <% @game.errors.full_messages.each do |msg| %>
       <div class="alert alert-danger"><%= msg%></div>
     <% end %>
   <% end %>
+
   <%= f.label :title %>:
   <%= f.text_field :title, {:class => 'form-control'} %><br />
 

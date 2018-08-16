@@ -1,1 +1,8 @@
-<h1>Index</h1>
+<h1>LOOK AT MAH SHIT</h1>
+<% @games.each do |game| %>
+  <div class="well">
+    <h4><%= game.title %></h4>
+    <%= link_to "View", games_path(game), :class => 'btn btn-default' %>
+  </div>
+
+<%end%>

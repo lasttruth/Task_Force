@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180816140130) do
+ActiveRecord::Schema.define(version: 20180819223741) do
 
   create_table "games", force: :cascade do |t|
     t.string "title"
     t.string "genre"
     t.string "platform"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trackers", force: :cascade do |t|
+    t.integer "progress"
+    t.boolean "completion", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

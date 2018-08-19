@@ -1,8 +1,9 @@
-<h1>LOOK AT MAH SHIT</h1>
+<h1>BACKLOG OF YOUR GAMES</h1>
 <% @games.each do |game| %>
   <div class="well">
 
     <h4><%= game.title %></h4>
+    <%= progress_bar 0.1 %>
     <%= link_to "View", game_path(game), :class => 'btn btn-default' %>
 
   </div>

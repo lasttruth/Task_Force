@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root 'games#index', as: 'home'
 
   get 'about' => 'gamesowned#about', as: 'about'
-  resources :games
+  resources :games do
+    get 'progress' => 'trackers#progress', as: 'progress'
+  end
 end

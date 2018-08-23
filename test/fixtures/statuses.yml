@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  condition: MyString
+  completion: 1
+  max_completion: 
+
+two:
+  condition: MyString
+  completion: 1
+  max_completion: 

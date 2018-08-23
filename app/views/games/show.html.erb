@@ -5,9 +5,19 @@
 <h2><%= @game.title %></h2>
 <p><%= @game.genre %></p>
 <p><%= @game.platform %></p>
+<%= render 'statuses/statuses'%>
 <hr>
 <%= link_to "edit", edit_game_path(@game), :class => 'btn btn-default'%>
 <%= link_to "Delete", game_path(@game), method: :delete,
                                       data: {confirm:"Did you realize you don't have the game? lol"},
                                       :class => 'btn btn-danger'%>
+
+<% @game.statuses.each do |status| %>
+  <% if status.completion == nil %>
+    <%= link_to 'Current Status', game_status_path(@game)  %></p>
+  <% else %>
+    </p>
+  <% end %>
+<% end %>
+
 </div>

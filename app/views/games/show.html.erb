@@ -12,12 +12,6 @@
                                       data: {confirm:"Did you realize you don't have the game? lol"},
                                       :class => 'btn btn-danger'%>
 
-<% @game.statuses.each do |status| %>
-  <% if status.completion == nil %>
-    <%= link_to 'Current Status', game_status_path(@game)  %></p>
-  <% else %>
-    </p>
-  <% end %>
-<% end %>
+<%= render 'statuses/form'%>
 
 </div>

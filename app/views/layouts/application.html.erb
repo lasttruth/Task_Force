@@ -14,17 +14,20 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <%= link_to "HOME", home_path %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Add Games", new_game_path %>
-          </li>
+      <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
+        <% if !current_user %>
+         <a class="navbar-brand" href="<%= new_user_path %>"/>Sign Up</a>
+         <%= link_to "Log in", signin_path, class:"navbar-brand" %>
+       <% end %>
+       <% if current_user %>
+         <%= link_to "#{current_user.name}'s profile", user_path(current_user), class:"navbar-brand"%>
+         <%= link_to "Log Out", sessions_path, class:"navbar-brand",method:'delete' %>
+       <% end %>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
 
-        </form>
-      </div>
+          </ul>
     </nav>
   <div class="container">
     <%= yield %>

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     if current_user
       @user = User.new
     else
-      redirect_to sign_in_path
+      redirect_to signin_path
     end
  end
 

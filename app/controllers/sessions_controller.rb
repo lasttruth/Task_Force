@@ -1,8 +1,8 @@
 class SessionsController < ApplicationController
 skip_before_action :verify_authenticity_token
   def destroy
-    session[:user_id] = nil
-    redirect_to root_url
+    session.destroy
+    redirect_to home_path
   end
 
   def new
@@ -21,10 +21,6 @@ skip_before_action :verify_authenticity_token
      end
   end
 
-  def destroy
-    reset_session
-    redirect_to home_url
-  end
 
   private
 

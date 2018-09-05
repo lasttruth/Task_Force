@@ -22,7 +22,7 @@
        <% if current_user %>
          <%= link_to "#{current_user.email}'s profile", users_path(current_user), class:"navbar-brand"%>
 
-         <%= link_to "Add Game", games_path, class:"navbar-brand", method: 'create' %>
+         <%= link_to "Add Game", new_game_path, class:"navbar-brand"%>
 
          <%= link_to "Log Out", sessions_path, class:"navbar-brand", method: 'delete' %>
        <% end %>

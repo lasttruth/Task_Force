@@ -1,7 +1,11 @@
 class StatusesController < ApplicationController
   def create
+    @user = User.find(session[:user_id])
     @game = Game.find(params[:game_id])
     @status = @game.statuses.create(status_params)
+    @status.user = @user
+    @status.save
+
     redirect_to game_path(@game)
   end
 
@@ -14,6 +18,6 @@ class StatusesController < ApplicationController
 
   private
   def status_params
-    params.require(:status).permit(:codition, :completion)
+    params.require(:status).permit(:condition, :completion)
   end
 end

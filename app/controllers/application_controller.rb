@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  before_action :authenticate_with_http_token
+  before_action :current_user
 
 
 
@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   private
 
   def require_logged_in
-    redirect_to root_path unless logged_in?
+    redirect_to home_path unless logged_in?
   end
 
   def current_user

@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
     def show
-      @message = params[:message] if params[:message]
-      @message ||= false
+      if current_user
+        @user = User.new
+      else
+        redirect_to sign_in_path
+      end
     end
 
     def new

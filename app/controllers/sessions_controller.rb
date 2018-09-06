@@ -6,18 +6,21 @@ skip_before_action :verify_authenticity_token
   end
 
   def new
-    @user = User.new
-    @users = User.all
+    if current_user
+      redirect_to games_path
+    else
+      @user = User.new
+    end
   end
 
   def create
-    user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
+    user = User.find_by(email: params[:user][:email])
+    if user && user.authenticate(params[:user][:password])
       session[:user_id] = user.id
       redirect_to home_path
      else
       flash[:alert] = "Email or password is invalid"
-      redirect_to signin_path
+      redirect_to sign_in_path
      end
   end
 

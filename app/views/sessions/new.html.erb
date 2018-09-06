@@ -1,14 +1,10 @@
-<%= form_tag('sessions', method: :post) do %>
-   <div class="form-group">
-    <%= label_tag(:email, "Your name:") %>
-     <%= text_field_tag(:user, :email) %>
-  </div>
-   <div class="form-group">
-    <%= label_tag(:password, "Your password:") %>
-    <%= password_field_tag(:password, nil, class: "form-control") %>
-  </div>
-   <div class="actions">
-    <%= submit_tag("Sign In") %>
-  </div>
-  <% binding.pry %>
- <% end %>
+<h1>Sign in</h1>
+
+<br><br>
+<%= form_for(@user, url: sign_in_path) do |f| %>
+  email: <%= f.text_field :email %>
+  password: <%= f.password_field :password %>
+  <%= f.submit "Sign In" %>
+<% end %>
+<br><br><br><br><br>
+<h3>Not a member?</h3>

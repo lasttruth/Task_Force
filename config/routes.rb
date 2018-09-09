@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/sign_in', to:  "sessions#new"
   post '/sign_in', to: "sessions#create"
   delete '/sessions', to: 'sessions#destroy'
 
-  root 'user#index', as: 'home'
-
+  root 'static_pages#home'
   resources :users, :only => [:new, :create]
   resources :games do
     resources :statuses

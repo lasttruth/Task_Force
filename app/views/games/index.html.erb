@@ -3,7 +3,7 @@
   <div class="well">
 
     <h4><%= game.title %></h4>
-    <%= progress_bar 0.6 %>
+    <%= bootstrap_progress_bar(33, :color => 'info', :striped => true) %>
     <%= link_to "View", game_path(game), :class => 'btn btn-default' %>
 
   </div>

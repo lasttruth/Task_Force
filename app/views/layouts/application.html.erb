@@ -14,7 +14,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <a class="navbar-brand" href="<%= games_url %>"/>Home</a>
+      <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
         <% if !current_user %>
          <a class="navbar-brand" href="<%= new_user_path %>"/>Sign Up</a>
          <%= link_to "Log in", sign_in_path, class:"navbar-brand" %>

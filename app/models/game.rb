@@ -1,6 +1,6 @@
 class Game < ApplicationRecord
   has_many :statuses
-  has_many :users, :through => :rides
+  has_many :users, :through => :statuses
   validates :title, presence: true
 
 end

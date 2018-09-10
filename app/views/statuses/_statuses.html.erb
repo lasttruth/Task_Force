@@ -3,10 +3,9 @@
 
   <div class="well">
     <p><strong><%= status.condition %></strong></p>
-
+    <%= bootstrap_progress_bar(status.completion, :color => 'info', :striped => true) %>
     <p><strong><%= status.completion %>%</strong>
+      <%= link_to "change", edit_game_status_path(@game), :class => 'btn btn-default'%>
       <%= button_to "x", game_status_path(@game.statuses, status), :method => "delete", :class => "destroy" %>
-      <%= link_to "edit", edit_game_status_path(@game), :class => 'btn btn-default'%>
-
   </div>
 <% end %>

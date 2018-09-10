@@ -1,14 +1,16 @@
 class StatusesController < ApplicationController
   def create
-
+    @user = current_user
     @game = Game.find(params[:game_id])
     @status = @game.statuses.create(status_params)
+    @status.user = @user
     @status.save
+
     redirect_to game_path(@game)
   end
 
   def edit
-    @user = User.find(session[:user_id])
+    @user = current_user
     @game = Game.find(params[:game_id])
     @status = @game.statuses.update(status_params)
     @status.user = @user

@@ -33,6 +33,7 @@ gem 'delayed_job_active_record'
 gem 'progress_job'
 gem 'bootstrap_progressbar'
 gem 'css3-progress-bar-rails'
+gem 'omniauth-facebook'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'pry'

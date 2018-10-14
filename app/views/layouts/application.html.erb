@@ -15,6 +15,12 @@
       </button>
 
       <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
+      <% unless current_user %>
+        <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path, class:"navbar-brand" %>
+      <% else %>
+        <%= current_user[:name] %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <% end %>
         <% if !current_user %>
          <a class="navbar-brand" href="<%= new_user_registration_path %>"/>Sign Up</a>
          <%= link_to "Log in", new_user_session_path, class:"navbar-brand" %>

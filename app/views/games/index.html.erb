@@ -1,6 +1,6 @@
 <h1>BACKLOG OF YOUR GAMES</h1>
 <% @games.each do |game| %>
-  <div class="well">
+  <div class="w3-example">
 
     <h4><%= game.title %></h4>
     <%= bootstrap_progress_bar(33, :color => 'info', :striped => true) %>

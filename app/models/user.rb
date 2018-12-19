@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   devise :omniauthable, :omniauth_providers => [:facebook]
 
-  has_many :games
-  has_many :statuses, :through => :games
+  has_many :statuses
+  has_many :games, :through => :statuses
 
 
   validates :email, uniqueness: true

@@ -31,6 +31,6 @@ class StatusesController < ApplicationController
 
   private
   def status_params
-    params.require(:status).permit(:condition, :completion)
+    Parameters: {"result"=>{"data"=>"string"}}
   end
 end
